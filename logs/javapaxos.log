@@ -1,0 +1,120 @@
+2026-10-07 12:31:52.586 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.PaxosDemo - Paxos demo starting: 5 acceptors (A-E), initial proposal[1:null]
+2026-10-07 12:31:52.591 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - VOTE start: proposal[1:null], acceptors=5, quorum=3
+2026-10-07 12:31:52.591 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[1] start, proposing[1:null]
+2026-10-07 12:31:52.592 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[1:null] -> NO RESPONSE
+2026-10-07 12:31:52.592 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[1:null] -> OK (promised last accepted[0:null])
+2026-10-07 12:31:52.593 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[1:null] -> OK (promised last accepted[0:null])
+2026-10-07 12:31:52.593 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[1:null] -> NO RESPONSE
+2026-10-07 12:31:52.593 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[1:null] -> OK (promised last accepted[0:null])
+2026-10-07 12:31:52.593 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE ok, 3 acceptors promised for proposal[1:null]
+2026-10-07 12:31:52.593 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:31:52.593 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: ACCEPT proposal[1:null] -> MISMATCH
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: ACCEPT failed, acceptCount=0/3 for proposal[1:null]
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: maxVote[0:null] has no content, pick random -> [2:ProjectB]
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after accept failure -> [2:ProjectB]
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[2] start, proposing[2:ProjectB]
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[2:ProjectB] -> OK (promised last accepted[0:null])
+2026-10-07 12:31:52.594 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[2:ProjectB] -> NO RESPONSE
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[2:ProjectB] -> NO RESPONSE
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[2:ProjectB] -> NO RESPONSE
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[2:ProjectB] -> NO RESPONSE
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE failed, promises=1/3 for proposal[2:ProjectB]
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: maxVote[0:null] has no content, pick random -> [3:ProjectB]
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after prepare failure -> [3:ProjectB]
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[3] start, proposing[3:ProjectB]
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[3:ProjectB] -> OK (promised last accepted[2:ProjectB])
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[3:ProjectB] -> OK (promised last accepted[1:null])
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[3:ProjectB] -> OK (promised last accepted[1:null])
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[3:ProjectB] -> OK (promised last accepted[0:null])
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[3:ProjectB] -> OK (promised last accepted[1:null])
+2026-10-07 12:31:52.595 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE ok, 5 acceptors promised for proposal[3:ProjectB]
+2026-10-07 12:31:52.604 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: ACCEPT proposal[3:ProjectB] -> OK
+2026-10-07 12:31:52.604 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: ACCEPT proposal[3:ProjectB] -> OK
+2026-10-07 12:31:52.604 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: ACCEPT proposal[3:ProjectB] -> OK
+2026-10-07 12:31:52.604 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: ACCEPT proposal[3:ProjectB] -> NO RESPONSE
+2026-10-07 12:31:52.604 [cn.wdidada.javapaxos.PaxosDemo.main()] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: ACCEPT proposal[3:ProjectB] -> OK
+2026-10-07 12:31:52.604 [cn.wdidada.javapaxos.PaxosDemo.main()] INFO  cn.wdidada.javapaxos.Proposer - VOTE SUCCESS: proposal[3:ProjectB] accepted by 3 acceptors (quorum=3) after 3 round(s)
+2026-10-07 12:32:47.848 [main] INFO  cn.wdidada.javapaxos.PaxosDemo - Paxos demo starting: 5 acceptors (A-E), initial proposal[1:null]
+2026-10-07 12:32:47.857 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE start: proposal[1:null], acceptors=5, quorum=3
+2026-10-07 12:32:47.858 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[1] start, proposing[1:null]
+2026-10-07 12:32:47.859 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[1:null] -> OK (promised last accepted[0:null])
+2026-10-07 12:32:47.859 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[1:null] -> NO RESPONSE
+2026-10-07 12:32:47.859 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[1:null] -> OK (promised last accepted[0:null])
+2026-10-07 12:32:47.860 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[1:null] -> OK (promised last accepted[0:null])
+2026-10-07 12:32:47.860 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[1:null] -> OK (promised last accepted[0:null])
+2026-10-07 12:32:47.860 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE ok, 4 acceptors promised for proposal[1:null]
+2026-10-07 12:32:47.860 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:32:47.861 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:32:47.861 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:32:47.862 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: ACCEPT proposal[1:null] -> OK
+2026-10-07 12:32:47.863 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: ACCEPT proposal[1:null] -> NO RESPONSE
+2026-10-07 12:32:47.863 [main] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: ACCEPT failed, acceptCount=1/3 for proposal[1:null]
+2026-10-07 12:32:47.863 [main] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: maxVote[0:null] has no content, pick random -> [2:ProjectA]
+2026-10-07 12:32:47.863 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after accept failure -> [2:ProjectA]
+2026-10-07 12:32:47.863 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[2] start, proposing[2:ProjectA]
+2026-10-07 12:32:47.863 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[2:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.863 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[2:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.863 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[2:ProjectA] -> OK (promised last accepted[1:null])
+2026-10-07 12:32:47.863 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[2:ProjectA] -> OK (promised last accepted[1:null])
+2026-10-07 12:32:47.863 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[2:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.863 [main] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE failed, promises=2/3 for proposal[2:ProjectA]
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: maxVote[1:null] has no content, pick random -> [3:ProjectA]
+2026-10-07 12:32:47.864 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after prepare failure -> [3:ProjectA]
+2026-10-07 12:32:47.864 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[3] start, proposing[3:ProjectA]
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[3:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[3:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[3:ProjectA] -> OK (promised last accepted[2:ProjectA])
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[3:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[3:ProjectA] -> OK (promised last accepted[1:null])
+2026-10-07 12:32:47.864 [main] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE failed, promises=2/3 for proposal[3:ProjectA]
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: reuse maxVote[2:ProjectA] content -> [4:ProjectA]
+2026-10-07 12:32:47.864 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after prepare failure -> [4:ProjectA]
+2026-10-07 12:32:47.864 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[4] start, proposing[4:ProjectA]
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[4:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[4:ProjectA] -> OK (promised last accepted[0:null])
+2026-10-07 12:32:47.864 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[4:ProjectA] -> OK (promised last accepted[3:ProjectA])
+2026-10-07 12:32:47.866 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[4:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.866 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[4:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.866 [main] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE failed, promises=2/3 for proposal[4:ProjectA]
+2026-10-07 12:32:47.866 [main] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: reuse maxVote[3:ProjectA] content -> [5:ProjectA]
+2026-10-07 12:32:47.866 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after prepare failure -> [5:ProjectA]
+2026-10-07 12:32:47.866 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[5] start, proposing[5:ProjectA]
+2026-10-07 12:32:47.866 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[5:ProjectA] -> OK (promised last accepted[1:null])
+2026-10-07 12:32:47.866 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[5:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.866 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[5:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[5:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[5:ProjectA] -> OK (promised last accepted[3:ProjectA])
+2026-10-07 12:32:47.867 [main] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE failed, promises=2/3 for proposal[5:ProjectA]
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: reuse maxVote[3:ProjectA] content -> [6:ProjectA]
+2026-10-07 12:32:47.867 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after prepare failure -> [6:ProjectA]
+2026-10-07 12:32:47.867 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[6] start, proposing[6:ProjectA]
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[6:ProjectA] -> OK (promised last accepted[5:ProjectA])
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[6:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[6:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[6:ProjectA] -> OK (promised last accepted[2:ProjectA])
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[6:ProjectA] -> OK (promised last accepted[5:ProjectA])
+2026-10-07 12:32:47.867 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE ok, 3 acceptors promised for proposal[6:ProjectA]
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: ACCEPT proposal[6:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: ACCEPT proposal[6:ProjectA] -> MISMATCH
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: ACCEPT proposal[6:ProjectA] -> MISMATCH
+2026-10-07 12:32:47.867 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: ACCEPT proposal[6:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: ACCEPT proposal[6:ProjectA] -> OK
+2026-10-07 12:32:47.868 [main] WARN  cn.wdidada.javapaxos.Proposer - PROPOSER: ACCEPT failed, acceptCount=1/3 for proposal[6:ProjectA]
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.PaxosDemo - NEXT_PROPOSAL: reuse maxVote[5:ProjectA] content -> [7:ProjectA]
+2026-10-07 12:32:47.868 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: re-propose after accept failure -> [7:ProjectA]
+2026-10-07 12:32:47.868 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE_ROUND[7] start, proposing[7:ProjectA]
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: PREPARE proposal[7:ProjectA] -> OK (promised last accepted[6:ProjectA])
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: PREPARE proposal[7:ProjectA] -> OK (promised last accepted[4:ProjectA])
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: PREPARE proposal[7:ProjectA] -> OK (promised last accepted[4:ProjectA])
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: PREPARE proposal[7:ProjectA] -> OK (promised last accepted[6:ProjectA])
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: PREPARE proposal[7:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.868 [main] INFO  cn.wdidada.javapaxos.Proposer - PROPOSER: PREPARE ok, 4 acceptors promised for proposal[7:ProjectA]
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_A: ACCEPT proposal[7:ProjectA] -> OK
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_B: ACCEPT proposal[7:ProjectA] -> OK
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_C: ACCEPT proposal[7:ProjectA] -> OK
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_D: ACCEPT proposal[7:ProjectA] -> NO RESPONSE
+2026-10-07 12:32:47.868 [main] DEBUG cn.wdidada.javapaxos.Acceptor - ACCEPTER_E: ACCEPT proposal[7:ProjectA] -> MISMATCH
+2026-10-07 12:32:47.869 [main] INFO  cn.wdidada.javapaxos.Proposer - VOTE SUCCESS: proposal[7:ProjectA] accepted by 3 acceptors (quorum=3) after 7 round(s)

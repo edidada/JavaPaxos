@@ -1,4 +1,4 @@
-package paxos;
+package cn.wdidada.javapaxos;
 
 /**
  * @description:
@@ -24,4 +24,3 @@ public   class Promise {
         return proposal;
     }
 }
-

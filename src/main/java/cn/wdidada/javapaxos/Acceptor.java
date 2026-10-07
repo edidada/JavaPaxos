@@ -1,4 +1,7 @@
-package paxos;
+package cn.wdidada.javapaxos;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @description:
@@ -7,6 +10,8 @@ package paxos;
  **/
 
 public class Acceptor {
+
+    private static final Logger LOGGER = LogManager.getLogger(Acceptor.class);
 
     //上次表决结果
     private Proposal last = new Proposal();
@@ -19,7 +24,7 @@ public class Acceptor {
     public Promise onPrepare(Proposal proposal) {
         //假设这个过程有50%的几率失败
         if (Math.random() - 0.5 > 0) {
-            Proposer.printInfo("ACCEPTER_" + name, "PREPARE", "NO RESPONSE");
+            LOGGER.debug("ACCEPTER_{}: PREPARE proposal[{}] -> NO RESPONSE", name, proposal);
             return null;
         }
         if (proposal == null)
@@ -27,10 +32,12 @@ public class Acceptor {
         if (proposal.getVoteNumber() > last.getVoteNumber()) {
             Promise response = new Promise(true, last);
             last = proposal;
-            Proposer. printInfo("ACCEPTER_" + name, "PREPARE", "OK");
+            LOGGER.debug("ACCEPTER_{}: PREPARE proposal[{}] -> OK (promised last accepted[{}])",
+                    name, proposal, response.getProposal());
             return response;
         } else {
-            Proposer.printInfo("ACCEPTER_" + name, "PREPARE", "REJECTED");
+            LOGGER.debug("ACCEPTER_{}: PREPARE proposal[{}] -> REJECTED (already promised to voteNumber={})",
+                    name, proposal, last.getVoteNumber());
             return new Promise(false, null);
         }
     }
@@ -38,10 +45,11 @@ public class Acceptor {
     public boolean onAccept(Proposal proposal) {
         //假设这个过程有50%的几率失败
         if (Math.random() - 0.5 > 0) {
-            Proposer.printInfo("ACCEPTER_" + name, "ACCEPT", "NO RESPONSE");
+            LOGGER.debug("ACCEPTER_{}: ACCEPT proposal[{}] -> NO RESPONSE", name, proposal);
             return false;
         }
-        Proposer.printInfo("ACCEPTER_" + name, "ACCEPT", "OK");
-        return last.equals(proposal);
+        boolean accepted = last.equals(proposal);
+        LOGGER.debug("ACCEPTER_{}: ACCEPT proposal[{}] -> {}", name, proposal, accepted ? "OK" : "MISMATCH");
+        return accepted;
     }
 }

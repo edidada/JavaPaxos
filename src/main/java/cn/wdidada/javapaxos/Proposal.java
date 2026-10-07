@@ -1,6 +1,5 @@
-package paxos;
+package cn.wdidada.javapaxos;
 
-import com.google.common.base.Charsets;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -51,7 +50,7 @@ public class Proposal implements Comparable<Proposal> {
         return PaxosDemo.HASH_FUNCTION
                 .newHasher()
                 .putLong(voteNumber)
-                .putString(content, Charsets.UTF_8)
+                .putString(content, com.google.common.base.Charsets.UTF_8)
                 .hash()
                 .asInt();
     }
@@ -65,4 +64,3 @@ public class Proposal implements Comparable<Proposal> {
                 .toString();
     }
 }
-
