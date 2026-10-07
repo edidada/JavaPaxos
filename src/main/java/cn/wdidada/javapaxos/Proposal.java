@@ -1,5 +1,9 @@
 package cn.wdidada.javapaxos;
 
+import com.google.common.base.Charsets;
+import com.google.common.base.Strings;
+import com.google.common.hash.HashFunction;
+import com.google.common.hash.Hashing;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -9,6 +13,8 @@ import org.apache.commons.lang3.StringUtils;
  **/
 
 public class Proposal implements Comparable<Proposal> {
+
+    public static final HashFunction HASH_FUNCTION = Hashing.murmur3_32();
 
     private final long voteNumber;
     private final String content;
@@ -37,6 +43,8 @@ public class Proposal implements Comparable<Proposal> {
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
         if (obj == null)
             return false;
         if (!(obj instanceof Proposal))
@@ -47,10 +55,10 @@ public class Proposal implements Comparable<Proposal> {
 
     @Override
     public int hashCode() {
-        return PaxosDemo.HASH_FUNCTION
+        return HASH_FUNCTION
                 .newHasher()
                 .putLong(voteNumber)
-                .putString(content, com.google.common.base.Charsets.UTF_8)
+                .putString(Strings.nullToEmpty(content), Charsets.UTF_8)
                 .hash()
                 .asInt();
     }

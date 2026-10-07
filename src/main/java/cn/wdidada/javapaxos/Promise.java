@@ -6,7 +6,7 @@ package cn.wdidada.javapaxos;
  * @create: 2020-04-19 21:21
  **/
 
-public   class Promise {
+public class Promise {
 
     private final boolean ack;
     private final Proposal proposal;
@@ -22,5 +22,10 @@ public   class Promise {
 
     public Proposal getProposal() {
         return proposal;
+    }
+
+    @Override
+    public String toString() {
+        return "Promise{ack=" + ack + ", proposal=" + proposal + '}';
     }
 }
